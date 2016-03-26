@@ -84,9 +84,7 @@
 (print (subst-1st 'dog 'cat '(my cat is cute) ) ) 
 (print (subst-1st 'b 'a '(c a b a c) )) 
 (print (subst-1st '(0) '(*) '((*)(*)(0)) )  ) 
-
 ;7. SUBST-ALL
-
 (defun subst-all (x2 x1 list) 
 	(if(null list) 
 		nil
@@ -102,14 +100,27 @@
 (print (subst-all 'b 'a '(c a b a c)) ) 
 (print (subst-all '(0) '(*) '((*)(*)(0)) )  ) 
 ;8. PUT-AGE
-;(print "------------------------" )
-;(print "#8. PUT-AGE")
-;(print (put-age 'tom 20 '((mary 19)(joe 25))))
+(defun put-age (x y list)
+	(cons (cons x (cons y nil)) list)
+)
+(print "------------------------" )
+(print "#8. PUT-AGE")
+(print (put-age 'tom 20 '((mary 19)(joe 25))))
 ;9. GET-AGE
-;(print "------------------------" )
-;(print "#9. GET-AGE")
-;(print (get-age 'joe '((tom 20)(mary 19)(joe 25)) ))
+(defun get-age (name list)
+	(if (equal name (caar list))      
+		(cadar list)
+		(get-age name (cdr list))
+	)
+)
+(print "------------------------" )
+(print "#9. GET-AGE")
+(print (get-age 'joe '((tom 20)(mary 19)(joe 25)) ))
 ;10. MERGE
-;(print "------------------------" )
-;(print "#10. MERGE")
-;(print (merge '(1 3 4 7)'(2 4 5)  ))
+
+(defun merge (list1 list2)
+
+)
+(print "------------------------" )
+(print "#10. MERGE")
+(print (merge '(1 3 4 7)'(2 4 5)  ))
