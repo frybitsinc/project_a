@@ -118,9 +118,18 @@
 (print (get-age 'joe '((tom 20)(mary 19)(joe 25)) ))
 ;10. MERGE
 
-(defun merge (list1 list2)
-
+(defun my-merge (list1 list2)
+	(cond
+		( (null list1) list2 )	
+		( (null list2) list1 )
+		(t 
+			(if (<= (car list1) (car list2))        
+				(cons (car list1) (my-merge (cdr list1) list2 )    )  
+				(cons (car list2) (my-merge list1 (cdr list2) ) )
+			)
+		)
+	)
 )
 (print "------------------------" )
 (print "#10. MERGE")
-(print (merge '(1 3 4 7)'(2 4 5)  ))
+(print (my-merge '(1 3 4 7) '(2 4 5)))
