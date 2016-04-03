@@ -14,6 +14,8 @@
 (print (count-all-atom '((()))))
 (print (count-all-atom '()))
 ;2. remove-all2
+(defun remove-all2 (list)
+	(if (null (car list))
 ;3. reverse-all
 ;4. depth
 ;5. flatten
