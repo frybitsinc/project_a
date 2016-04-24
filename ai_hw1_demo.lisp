@@ -1,3 +1,4 @@
+;all solved and submitted
 ;1. LAST-ITEM
 (defun last-item (list) 
 	(if (null list) 
