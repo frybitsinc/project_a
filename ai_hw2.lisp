@@ -1,3 +1,4 @@
+;#1, #6 unsolved and submitted
 ;1. count-all-atom
 (defun count-all-atom (list)
 	(cond
